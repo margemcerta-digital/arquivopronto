@@ -1,12 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout title="Gerador de QR Code | ArquivoPronto" description="Gere QR Codes a partir de links ou textos em poucos passos.">
-  <span class="eyebrow">Ferramenta gratuita</span>
-  <h1 class="page-title">Gerador de QR Code</h1>
-  <p class="lead">Gere QR Codes a partir de links ou textos em poucos passos.</p>
-  <section class="tool-panel">
-    <p><strong>Área da ferramenta em construção.</strong></p>
-    <p class="muted">Estamos preparando esta ferramenta para funcionar diretamente no seu navegador.</p>
-  </section>
+<BaseLayout title="Gerador de QR Code | ArquivoPronto" description="Crie QR Codes gratuitos para links e textos e baixe a imagem em PNG.">
+  <span class="eyebrow">Ferramenta gratuita</span><h1 class="page-title">Gerador de QR Code</h1><p class="lead">Transforme um link ou texto em QR Code e baixe a imagem para usar onde quiser.</p>
+  <section class="tool-panel"><label for="content"><strong>Digite um link ou texto</strong></label><textarea id="content" rows="4" maxlength="2000" placeholder="https://exemplo.com"></textarea><label for="size">Tamanho</label><select id="size"><option value="256">256 × 256</option><option value="384" selected>384 × 384</option><option value="512">512 × 512</option><option value="768">768 × 768</option></select><button id="run">Gerar QR Code</button><div id="result" aria-live="polite"></div></section>
+  <style>.tool-panel{display:grid;gap:16px}.tool-panel textarea,.tool-panel select{width:100%;padding:13px;border:1px solid #cbd5e1;border-radius:10px;font:inherit}.tool-panel button{border:0;border-radius:12px;background:#2563eb;color:white;padding:14px 20px;font-weight:700;cursor:pointer}#result{display:grid;justify-items:start;gap:12px}#result img{max-width:100%;border:1px solid #e2e8f0;border-radius:12px}#result a{font-weight:700}</style>
+  <script>
+    import QRCode from "qrcode";
+    const content=document.querySelector("#content"),size=document.querySelector("#size"),run=document.querySelector("#run"),result=document.querySelector("#result");
+    run.addEventListener("click",async()=>{const value=content.value.trim();if(!value){result.textContent="Digite um link ou texto para continuar.";return;}try{const data=await QRCode.toDataURL(value,{width:Number(size.value),margin:2,errorCorrectionLevel:"M",color:{dark:"#172554",light:"#ffffff"}});result.replaceChildren();const img=document.createElement("img");img.src=data;img.alt="QR Code gerado";const link=document.createElement("a");link.href=data;link.download="qrcode-arquivopronto.png";link.textContent="Baixar QR Code (PNG)";result.append(img,link);}catch(e){result.textContent="Não foi possível gerar o QR Code. Tente reduzir o texto."; }});
+  </script>
 </BaseLayout>
