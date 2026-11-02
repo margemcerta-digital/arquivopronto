@@ -1,12 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout title="Imagem para PDF | ArquivoPronto" description="Converta suas imagens em um documento PDF diretamente no navegador.">
-  <span class="eyebrow">Ferramenta gratuita</span>
-  <h1 class="page-title">Imagem para PDF</h1>
-  <p class="lead">Converta suas imagens em um documento PDF diretamente no navegador.</p>
-  <section class="tool-panel">
-    <p><strong>Área da ferramenta em construção.</strong></p>
-    <p class="muted">Estamos preparando esta ferramenta para funcionar diretamente no seu navegador.</p>
-  </section>
+<BaseLayout title="Imagem para PDF | ArquivoPronto" description="Converta JPG, PNG e outras imagens em PDF gratuitamente, direto no navegador.">
+  <span class="eyebrow">Ferramenta gratuita</span><h1 class="page-title">Imagem para PDF</h1><p class="lead">Junte uma ou mais imagens em um único documento PDF. Seus arquivos são processados no próprio navegador.</p>
+  <section class="tool-panel"><label for="files"><strong>Escolha suas imagens</strong></label><input id="files" type="file" accept="image/*" multiple /><div id="preview" class="muted" aria-live="polite">Nenhuma imagem selecionada.</div><button id="convert" disabled>Converter e baixar PDF</button><p id="status" class="muted" aria-live="polite"></p></section>
+  <style>.tool-panel{display:grid;gap:18px}.tool-panel input{padding:14px;border:1px dashed #94a3b8;border-radius:12px;width:100%}button{border:0;border-radius:12px;background:#2563eb;color:white;padding:14px 20px;font-weight:700;cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}</style>
+  <script>
+    import { jsPDF } from "jspdf";
+    const input=document.querySelector("#files"),button=document.querySelector("#convert"),preview=document.querySelector("#preview"),status=document.querySelector("#status");let files=[];
+    input.addEventListener("change",()=>{files=Array.from(input.files||[]).filter(f=>f.type.startsWith("image/"));preview.textContent=files.length?files.map(f=>f.name).join(" • "):"Nenhuma imagem válida selecionada.";button.disabled=!files.length;status.textContent="";});
+    button.addEventListener("click",async()=>{if(!files.length)return;button.disabled=true;status.textContent="Preparando PDF...";try{const pdf=new jsPDF({orientation:"portrait",unit:"pt",format:"a4"});for(let i=0;i<files.length;i++){const url=URL.createObjectURL(files[i]);try{const img=new Image();img.src=url;await img.decode();if(i)pdf.addPage();const w=pdf.internal.pageSize.getWidth(),h=pdf.internal.pageSize.getHeight(),scale=Math.min(w/img.width,h/img.height);pdf.addImage(img,"JPEG",(w-img.width*scale)/2,(h-img.height*scale)/2,img.width*scale,img.height*scale);}finally{URL.revokeObjectURL(url);}}pdf.save("imagens-arquivopronto.pdf");status.textContent="PDF criado e baixado com sucesso.";}catch(e){status.textContent="Não foi possível converter. Tente imagens JPG ou PNG menores.";}finally{button.disabled=false;}});
+  </script>
 </BaseLayout>
