@@ -11,6 +11,9 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "astro": "^5.14.1",
+    "browser-image-compression": "^2.0.2",
+    "jspdf": "^3.0.3",
+    "qrcode": "^1.5.4",
     "typescript": "^5.9.2"
   }
 }
