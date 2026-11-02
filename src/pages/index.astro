@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const tools = [
+  { title: "Imagem para PDF", description: "Transforme imagens em um arquivo PDF de forma simples.", href: "/imagem-para-pdf", icon: "PDF" },
+  { title: "Comprimir imagem", description: "Reduza o tamanho de imagens para compartilhar e enviar.", href: "/comprimir-imagem", icon: "↓" },
+  { title: "Redimensionar imagem", description: "Ajuste largura e altura das suas imagens.", href: "/redimensionar-imagem", icon: "↗" },
+  { title: "Gerar QR Code", description: "Crie QR Codes para links e textos rapidamente.", href: "/qr-code", icon: "▦" },
+];
+---
+<BaseLayout title="ArquivoPronto | Ferramentas gratuitas para arquivos" description="Ferramentas online gratuitas para converter, comprimir e redimensionar imagens e gerar QR Codes.">
+  <section class="hero"><span class="eyebrow">Ferramentas online gratuitas</span><h1 class="page-title">Seus arquivos prontos.<br/><span>Sem complicação.</span></h1><p class="lead">Ferramentas práticas para trabalhar com imagens e documentos direto no navegador, sem instalar programas.</p></section>
+  <section class="tools"><div class="section-heading"><h2>O que você precisa fazer?</h2><p class="muted">Escolha uma ferramenta para começar.</p></div><div class="tool-grid">{tools.map((tool)=><a class="tool-card" href={tool.href}><span class="tool-icon">{tool.icon}</span><h3>{tool.title}</h3><p>{tool.description}</p><span class="tool-link">Abrir ferramenta →</span></a>)}</div></section>
+  <section class="privacy-note"><strong>Privacidade em primeiro lugar</strong><p>Nosso objetivo é processar seus arquivos diretamente no seu dispositivo sempre que possível, sem enviá-los a um servidor.</p></section>
+  <style>.hero{padding:46px 0 30px}.hero h1 span{color:#2563eb}.tools{margin-top:34px}.section-heading h2{font-size:1.65rem;margin-bottom:0}.section-heading p{margin-top:4px}.tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:22px}.tool-card{padding:24px;border:1px solid #e2e8f0;border-radius:18px;text-decoration:none;color:#172554;transition:.2s}.tool-card:hover{border-color:#93c5fd;transform:translateY(-3px);box-shadow:0 12px 30px #0f172a0d}.tool-icon{display:grid;place-items:center;width:44px;height:44px;background:#eff6ff;border-radius:12px;color:#2563eb;font-weight:800}.tool-card h3{margin:16px 0 4px}.tool-card p{margin:0 0 18px;color:#64748b}.tool-link{font-weight:700;color:#2563eb}.privacy-note{margin-top:34px;padding:22px 24px;border-radius:16px;background:#eff6ff;color:#1e3a8a}.privacy-note p{margin:5px 0 0;color:#475569}@media(max-width:650px){.tool-grid{grid-template-columns:1fr}.hero{padding-top:24px}}</style>
+</BaseLayout>
