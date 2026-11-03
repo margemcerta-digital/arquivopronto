@@ -12,6 +12,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p id="status" class="status muted" aria-live="polite"></p><p class="privacy-hint">O processamento é feito no navegador. A imagem final será baixada em formato PNG.</p>
   </section>
   <section class="info-grid"><article><span class="eyebrow">Dimensões em pixels</span><h2>O que significam largura e altura?</h2><p>Pixels são unidades que descrevem as dimensões de uma imagem digital. A largura indica quantos pixels existem na horizontal; a altura indica a quantidade na vertical. A dimensão adequada depende de onde a imagem será exibida.</p></article><article><span class="eyebrow">Proporção</span><h2>Por que manter a proporção?</h2><p>A proporção é a relação entre largura e altura. Mantê-la evita que pessoas e objetos pareçam esticados ou achatados. Desative essa opção apenas quando precisar intencionalmente de uma dimensão diferente.</p></article></section>
+  <section class="use-cases" aria-labelledby="use-cases-title">
+    <span class="eyebrow">Quando usar</span>
+    <h2 id="use-cases-title">Ajuste imagens para sites, formulários e redes sociais</h2>
+    <p>Redimensionar uma imagem permite adequar suas dimensões em pixels ao espaço onde ela será utilizada. Uma foto muito grande pode ser reduzida para caber em um formulário ou página; uma imagem pequena ampliada demais pode perder nitidez.</p>
+    <h3>Escolha as dimensões com cuidado</h3>
+    <ul><li>Verifique se o site, formulário ou plataforma informa uma largura e altura recomendadas.</li><li>Mantenha a proporção para evitar que a imagem fique esticada.</li><li>Guarde o original para poder criar outros tamanhos sem partir de uma imagem já reduzida.</li></ul>
+    <p>O ArquivoPronto permite definir dimensões de até 10.000 pixels por lado e gera um arquivo PNG. Redimensionar altera a quantidade de pixels, mas não garante, por si só, um tamanho de arquivo menor.</p>
+  </section>
   <section class="related-tools" aria-labelledby="related-title">
     <span class="eyebrow">Continue com outras ferramentas</span>
     <h2 id="related-title">Outras tarefas com imagens e arquivos</h2>
@@ -22,6 +30,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </ul>
   </section>
   <section class="faq"><h2>Perguntas frequentes</h2><details><summary>Redimensionar é o mesmo que comprimir?</summary><p>Não. Redimensionar altera a quantidade de pixels da imagem. Comprimir busca reduzir o tamanho do arquivo, podendo alterar a qualidade e, em alguns casos, também as dimensões.</p></details><details><summary>Qual dimensão devo escolher?</summary><p>Depende do destino. Para uma imagem em um site, considere o espaço em que ela será exibida. Para impressão, leve em conta as dimensões físicas e a resolução exigida pelo fornecedor.</p></details><details><summary>O que acontece se eu desmarcar “Manter proporção”?</summary><p>Você poderá definir largura e altura de forma independente. Isso pode deformar a imagem se a nova proporção for diferente da original.</p></details><details><summary>Em qual formato a imagem será salva?</summary><p>O arquivo gerado é exportado em PNG. O PNG é adequado para imagens com texto, gráficos e transparência, embora o tamanho final possa ser maior que o de um JPEG.</p></details></section>
+  <style>
+    .use-cases{margin-top:30px;padding:24px 26px;border:1px solid #e2e8f0;border-radius:18px;background:#fff}
+    .use-cases h2{font-size:1.35rem;line-height:1.3;margin:8px 0 12px;color:#172554}
+    .use-cases h3{font-size:1.02rem;margin:18px 0 7px;color:#1e293b}
+    .use-cases p,.use-cases li{color:#64748b}
+    .use-cases ul{padding-left:21px;margin:8px 0}
+    .use-cases li{margin:6px 0}
+  </style>
   <style>
     .related-tools{margin-top:30px;padding:23px 25px;border:1px solid #dbeafe;border-radius:17px;background:#f8fbff}
     .related-tools h2{font-size:1.25rem;line-height:1.3;margin:8px 0 12px;color:#172554}
