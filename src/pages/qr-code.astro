@@ -12,6 +12,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p class="privacy-hint">O QR Code é gerado no navegador. Antes de imprimir ou compartilhar, teste a leitura com a câmera de um celular.</p>
   </section>
   <section class="info-grid"><article><span class="eyebrow">Aplicações</span><h2>Onde usar um QR Code?</h2><p>Você pode incluir o código em cartões, embalagens, cartazes, apresentações e materiais de divulgação para facilitar o acesso a um site ou texto. Para links, confira se o endereço está correto e acessível ao público.</p></article><article><span class="eyebrow">Impressão e leitura</span><h2>Como garantir uma boa leitura?</h2><p>Mantenha contraste entre o código e o fundo, evite distorcer a imagem e deixe uma margem livre ao redor. O tamanho necessário depende da distância de leitura e da qualidade de impressão. Faça um teste antes de produzir em quantidade.</p></article></section>
+  <section class="use-cases" aria-labelledby="use-cases-title">
+    <span class="eyebrow">Quando usar</span>
+    <h2 id="use-cases-title">Crie QR Codes para links, informações e materiais impressos</h2>
+    <p>Um QR Code facilita o acesso a um endereço ou texto usando a câmera do celular. Ele pode ser colocado em cartões de visita, etiquetas, embalagens, cardápios, cartazes e apresentações. Quem aponta a câmera para o código pode abrir o conteúdo codificado, conforme os recursos do aparelho.</p>
+    <h3>Confira o código antes de divulgar</h3>
+    <ul><li>Para direcionar a um site, informe o endereço completo e revise a URL.</li><li>Teste a imagem baixada com mais de um celular, se possível.</li><li>Na impressão, mantenha contraste, proporção e espaço livre ao redor do código.</li></ul>
+    <p>Este gerador cria um código estático: o conteúdo fica gravado na própria imagem. Se o endereço de destino mudar, será necessário gerar e distribuir um novo QR Code. O código não acompanha métricas de acesso nem altera links automaticamente.</p>
+  </section>
   <section class="related-tools" aria-labelledby="related-title">
     <span class="eyebrow">Continue com outras ferramentas</span>
     <h2 id="related-title">Mais ferramentas gratuitas</h2>
@@ -22,6 +30,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </ul>
   </section>
   <section class="faq"><h2>Perguntas frequentes</h2><details><summary>O QR Code expira?</summary><p>O código gerado contém o texto ou endereço informado. Ele não expira por si só, mas um link pode deixar de funcionar se o site de destino sair do ar ou mudar de endereço.</p></details><details><summary>Posso usar o QR Code em materiais impressos?</summary><p>Sim. Baixe o PNG e insira-o no material. Antes de imprimir em quantidade, teste uma prova no tamanho final e confira a leitura em diferentes celulares.</p></details><details><summary>O que devo colocar no campo?</summary><p>Você pode inserir um endereço de site ou um texto de até 2.000 caracteres. Para criar um código de acesso a uma página, utilize o endereço completo, incluindo https:// quando aplicável.</p></details><details><summary>Qual tamanho devo escolher?</summary><p>O tamanho selecionado define as dimensões da imagem PNG em pixels. Para uso digital, tamanhos menores podem bastar; para impressão ou ampliação, escolha uma opção maior e evite ampliar excessivamente depois.</p></details></section>
+  <style>
+    .use-cases{margin-top:30px;padding:24px 26px;border:1px solid #e2e8f0;border-radius:18px;background:#fff}
+    .use-cases h2{font-size:1.35rem;line-height:1.3;margin:8px 0 12px;color:#172554}
+    .use-cases h3{font-size:1.02rem;margin:18px 0 7px;color:#1e293b}
+    .use-cases p,.use-cases li{color:#64748b}
+    .use-cases ul{padding-left:21px;margin:8px 0}
+    .use-cases li{margin:6px 0}
+  </style>
   <style>
     .related-tools{margin-top:30px;padding:23px 25px;border:1px solid #dbeafe;border-radius:17px;background:#f8fbff}
     .related-tools h2{font-size:1.25rem;line-height:1.3;margin:8px 0 12px;color:#172554}
