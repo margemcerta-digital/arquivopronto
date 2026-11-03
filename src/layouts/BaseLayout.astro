@@ -4,6 +4,27 @@ import Footer from "../components/Footer.astro";
 interface Props { title: string; description: string; canonical?: string; }
 const { title, description, canonical } = Astro.props;
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://arquivopronto.pages.dev/#website",
+      "url": "https://arquivopronto.pages.dev/",
+      "name": "ArquivoPronto",
+      "inLanguage": "pt-BR"
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      "url": canonicalUrl,
+      "name": title,
+      "description": description,
+      "inLanguage": "pt-BR",
+      "isPartOf": { "@id": "https://arquivopronto.pages.dev/#website" }
+    }
+  ]
+};
 ---
 <!doctype html>
 <html lang="pt-BR">
@@ -22,6 +43,7 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, "\\u003c")} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#2563eb" />
     <meta name="google-adsense-account" content="ca-pub-7942664206271443" />
