@@ -12,6 +12,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p class="privacy-hint">O processamento é realizado no navegador. As imagens selecionadas não precisam ser enviadas a um servidor para esta conversão.</p>
   </section>
   <section class="info-grid"><article><span class="eyebrow">Como usar</span><h2>Crie seu PDF em três passos</h2><ol><li>Selecione as imagens que deseja reunir.</li><li>Confira os nomes e a ordem dos arquivos selecionados.</li><li>Clique em “Converter e baixar PDF”. O documento será salvo no seu dispositivo.</li></ol></article><article><span class="eyebrow">Entenda o resultado</span><h2>O que acontece com as imagens?</h2><p>Cada imagem selecionada é colocada em uma página A4, centralizada e ajustada para caber na página sem distorcer suas proporções. O arquivo final é um PDF com uma página para cada imagem.</p></article></section>
+  <section class="use-cases" aria-labelledby="use-cases-title">
+    <span class="eyebrow">Quando usar</span>
+    <h2 id="use-cases-title">Junte fotos em um único documento PDF</h2>
+    <p>Converter imagens em PDF é útil quando você precisa organizar digitalizações, comprovantes, anotações fotografadas ou páginas de um documento em um arquivo fácil de compartilhar. Em vez de enviar várias imagens separadas, você pode reunir os arquivos selecionados em um único PDF.</p>
+    <h3>Prepare as imagens antes da conversão</h3>
+    <ul><li>Confira se todas as fotos estão na orientação correta.</li><li>Selecione os arquivos na sequência em que devem aparecer no documento.</li><li>Prefira imagens nítidas e legíveis, especialmente para textos e documentos.</li></ul>
+    <p>O ArquivoPronto cria uma página A4 para cada imagem e ajusta o conteúdo para caber na página, preservando a proporção. A ferramenta não faz reconhecimento de texto (OCR) nem transforma automaticamente o conteúdo da imagem em texto editável.</p>
+  </section>
   <section class="related-tools" aria-labelledby="related-title">
     <span class="eyebrow">Continue com outras ferramentas</span>
     <h2 id="related-title">O que mais você pode fazer com suas imagens?</h2>
@@ -22,6 +30,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </ul>
   </section>
   <section class="faq"><h2>Perguntas frequentes</h2><details><summary>Posso selecionar várias imagens?</summary><p>Sim. Use a seleção múltipla do seu dispositivo para escolher várias imagens. Cada arquivo será inserido em uma página do PDF.</p></details><details><summary>As imagens serão cortadas?</summary><p>A ferramenta ajusta cada imagem para caber na página A4, preservando sua proporção. Isso pode deixar margens em branco quando a proporção da imagem for diferente da página.</p></details><details><summary>Quais formatos posso usar?</summary><p>A ferramenta aceita arquivos reconhecidos pelo navegador como imagem. JPG e PNG são formatos comuns. A compatibilidade de outros formatos depende do navegador e do dispositivo.</p></details><details><summary>Por que a conversão pode falhar?</summary><p>Imagens muito grandes ou em formatos não suportados podem consumir muita memória ou não abrir. Tente utilizar imagens menores ou convertê-las para JPG ou PNG antes de repetir.</p></details></section>
+  <style>
+    .use-cases{margin-top:30px;padding:24px 26px;border:1px solid #e2e8f0;border-radius:18px;background:#fff}
+    .use-cases h2{font-size:1.35rem;line-height:1.3;margin:8px 0 12px;color:#172554}
+    .use-cases h3{font-size:1.02rem;margin:18px 0 7px;color:#1e293b}
+    .use-cases p,.use-cases li{color:#64748b}
+    .use-cases ul{padding-left:21px;margin:8px 0}
+    .use-cases li{margin:6px 0}
+  </style>
   <style>
     .related-tools{margin-top:30px;padding:23px 25px;border:1px solid #dbeafe;border-radius:17px;background:#f8fbff}
     .related-tools h2{font-size:1.25rem;line-height:1.3;margin:8px 0 12px;color:#172554}
