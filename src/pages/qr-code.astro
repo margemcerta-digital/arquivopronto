@@ -12,7 +12,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p class="privacy-hint">O QR Code é gerado no navegador. Antes de imprimir ou compartilhar, teste a leitura com a câmera de um celular.</p>
   </section>
   <section class="info-grid"><article><span class="eyebrow">Aplicações</span><h2>Onde usar um QR Code?</h2><p>Você pode incluir o código em cartões, embalagens, cartazes, apresentações e materiais de divulgação para facilitar o acesso a um site ou texto. Para links, confira se o endereço está correto e acessível ao público.</p></article><article><span class="eyebrow">Impressão e leitura</span><h2>Como garantir uma boa leitura?</h2><p>Mantenha contraste entre o código e o fundo, evite distorcer a imagem e deixe uma margem livre ao redor. O tamanho necessário depende da distância de leitura e da qualidade de impressão. Faça um teste antes de produzir em quantidade.</p></article></section>
+  <section class="related-tools" aria-labelledby="related-title">
+    <span class="eyebrow">Continue com outras ferramentas</span>
+    <h2 id="related-title">Mais ferramentas gratuitas</h2>
+    <ul>
+      <li><a href="/imagem-para-pdf/">Converter imagens em PDF</a> para reunir fotos em um documento.</li>
+      <li><a href="/comprimir-imagem/">Comprimir imagem online</a> para reduzir o peso de uma foto.</li>
+      <li><a href="/redimensionar-imagem/">Redimensionar imagem</a> para ajustar suas dimensões em pixels.</li>
+    </ul>
+  </section>
   <section class="faq"><h2>Perguntas frequentes</h2><details><summary>O QR Code expira?</summary><p>O código gerado contém o texto ou endereço informado. Ele não expira por si só, mas um link pode deixar de funcionar se o site de destino sair do ar ou mudar de endereço.</p></details><details><summary>Posso usar o QR Code em materiais impressos?</summary><p>Sim. Baixe o PNG e insira-o no material. Antes de imprimir em quantidade, teste uma prova no tamanho final e confira a leitura em diferentes celulares.</p></details><details><summary>O que devo colocar no campo?</summary><p>Você pode inserir um endereço de site ou um texto de até 2.000 caracteres. Para criar um código de acesso a uma página, utilize o endereço completo, incluindo https:// quando aplicável.</p></details><details><summary>Qual tamanho devo escolher?</summary><p>O tamanho selecionado define as dimensões da imagem PNG em pixels. Para uso digital, tamanhos menores podem bastar; para impressão ou ampliação, escolha uma opção maior e evite ampliar excessivamente depois.</p></details></section>
+  <style>
+    .related-tools{margin-top:30px;padding:23px 25px;border:1px solid #dbeafe;border-radius:17px;background:#f8fbff}
+    .related-tools h2{font-size:1.25rem;line-height:1.3;margin:8px 0 12px;color:#172554}
+    .related-tools ul{display:grid;gap:9px;margin:0;padding-left:20px;color:#64748b}
+    .related-tools li{padding-left:3px}
+    .related-tools a{font-weight:700;color:#1d4ed8}
+  </style>
   <style>
     .tool-heading{max-width:780px}.tool-panel{margin-top:28px;padding:28px;border:1px solid #dbeafe;border-radius:22px;background:linear-gradient(180deg,#f8fbff,#fff);box-shadow:0 12px 36px #0f172a08;display:grid;gap:16px}.panel-intro{display:flex;gap:13px;align-items:flex-start}.panel-step{display:grid;place-items:center;flex:0 0 34px;height:34px;background:#dbeafe;color:#1d4ed8;border-radius:10px;font-weight:800}.panel-intro p{margin:3px 0 0;color:#64748b;font-size:.94rem}.tool-panel textarea,.tool-panel select{width:100%;padding:13px;border:1px solid #cbd5e1;border-radius:10px;font:inherit;background:#fff}.tool-panel textarea:focus,.tool-panel select:focus,.dimensions input:focus{outline:3px solid #bfdbfe;border-color:#60a5fa}.tool-panel button{border:0;border-radius:12px;background:#2563eb;color:#fff;padding:14px 20px;font:inherit;font-weight:750;cursor:pointer}#result{display:grid;justify-items:start;gap:12px}#result img{max-width:100%;border:1px solid #e2e8f0;border-radius:12px;padding:8px;background:#fff}#result a{display:inline-block;padding:11px 15px;border-radius:10px;background:#eff6ff;font-weight:750}.privacy-hint{margin:0;color:#64748b;font-size:.84rem}.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}.info-grid article{padding:23px;border:1px solid #e2e8f0;border-radius:17px}.info-grid h2,.faq h2{font-size:1.25rem;margin:8px 0 12px}.info-grid p,.faq p{color:#64748b}.faq{margin:38px 0 10px}.faq details{padding:16px 0;border-bottom:1px solid #e2e8f0}.faq summary{cursor:pointer;font-weight:700}.faq p{margin:9px 0 0}@media(max-width:650px){.tool-panel{padding:20px}.info-grid{grid-template-columns:1fr}}
   </style>
