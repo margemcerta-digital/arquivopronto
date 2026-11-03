@@ -48,12 +48,26 @@ const structuredData = {
     <meta name="theme-color" content="#2563eb" />
     <meta name="google-adsense-account" content="ca-pub-7942664206271443" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7942664206271443" crossorigin="anonymous"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-132B74FRQZ"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
       gtag("config", "G-132B74FRQZ");
+      (function loadAnalyticsWhenIdle() {
+        var load = function () {
+          if (document.querySelector('script[data-arquivopronto-analytics]')) return;
+          var script = document.createElement("script");
+          script.async = true;
+          script.src = "https://www.googletagmanager.com/gtag/js?id=G-132B74FRQZ";
+          script.setAttribute("data-arquivopronto-analytics", "true");
+          document.head.appendChild(script);
+        };
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(load, { timeout: 2500 });
+        } else {
+          window.setTimeout(load, 1500);
+        }
+      })();
     </script>
     <title>{title}</title>
     <slot name="head" />
