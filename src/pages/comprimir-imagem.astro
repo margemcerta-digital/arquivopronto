@@ -12,6 +12,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <p class="privacy-hint">A compressão é executada no navegador. A saída desta ferramenta é um arquivo JPEG; imagens com transparência podem receber fundo sólido.</p>
   </section>
   <section class="info-grid"><article><span class="eyebrow">Como escolher</span><h2>Qual qualidade devo usar?</h2><p>Uma qualidade intermediária costuma ser um bom ponto de partida para imagens de uso cotidiano. Se o arquivo for destinado à impressão ou exigir detalhes finos, teste uma qualidade mais alta e confira o resultado antes de substituir o original.</p></article><article><span class="eyebrow">Antes de comprimir</span><h2>O que muda no arquivo?</h2><p>A compressão reduz o tamanho do arquivo ao ajustar a qualidade e as dimensões quando necessário. A ferramenta pode limitar a maior dimensão a 2.560 pixels e exporta o resultado em JPEG. Guarde o original caso precise de outra versão.</p></article></section>
+  <section class="use-cases" aria-labelledby="use-cases-title">
+    <span class="eyebrow">Quando usar</span>
+    <h2 id="use-cases-title">Reduza o tamanho de fotos para compartilhar e publicar</h2>
+    <p>Imagens pesadas podem demorar mais para enviar por aplicativos, anexar a e-mails ou carregar em páginas. A compressão ajuda a criar uma versão mais leve para esses usos, sem precisar instalar um programa no computador.</p>
+    <h3>Como escolher a qualidade</h3>
+    <ul><li>Comece em uma qualidade intermediária e compare o resultado com o original.</li><li>Use qualidade mais alta quando pequenos detalhes forem importantes.</li><li>Para imagens destinadas à web, verifique se o resultado continua nítido no tamanho em que será exibido.</li></ul>
+    <p>A ferramenta exporta em JPEG e pode limitar a maior dimensão a 2.560 pixels. Como JPEG não mantém transparência e utiliza compressão com perdas, mantenha o arquivo original caso precise de uma versão sem perdas ou com fundo transparente.</p>
+  </section>
   <section class="related-tools" aria-labelledby="related-title">
     <span class="eyebrow">Continue com outras ferramentas</span>
     <h2 id="related-title">Precisa fazer outro ajuste?</h2>
@@ -22,6 +30,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </ul>
   </section>
   <section class="faq"><h2>Perguntas frequentes</h2><details><summary>Comprimir uma imagem reduz sua qualidade?</summary><p>Sim. A compressão JPEG envolve perda de informação. Qualidade mais alta tende a preservar mais detalhes, enquanto qualidade mais baixa geralmente produz arquivos menores. Sempre confira o resultado.</p></details><details><summary>Por que PNG e WebP são baixados como JPG?</summary><p>Esta ferramenta exporta o resultado em JPEG para aplicar a compressão configurada. JPEG não preserva transparência; áreas transparentes podem ser preenchidas com uma cor sólida durante a conversão.</p></details><details><summary>O arquivo comprimido sempre fica menor?</summary><p>Não necessariamente. O tamanho final depende da imagem original, das dimensões e da qualidade escolhida. Imagens que já estão muito otimizadas podem apresentar pouca redução ou até gerar um arquivo maior.</p></details><details><summary>Posso apagar o arquivo original?</summary><p>Recomendamos manter uma cópia do original. Assim, você poderá gerar outra versão com qualidade ou dimensões diferentes se precisar.</p></details></section>
+  <style>
+    .use-cases{margin-top:30px;padding:24px 26px;border:1px solid #e2e8f0;border-radius:18px;background:#fff}
+    .use-cases h2{font-size:1.35rem;line-height:1.3;margin:8px 0 12px;color:#172554}
+    .use-cases h3{font-size:1.02rem;margin:18px 0 7px;color:#1e293b}
+    .use-cases p,.use-cases li{color:#64748b}
+    .use-cases ul{padding-left:21px;margin:8px 0}
+    .use-cases li{margin:6px 0}
+  </style>
   <style>
     .related-tools{margin-top:30px;padding:23px 25px;border:1px solid #dbeafe;border-radius:17px;background:#f8fbff}
     .related-tools h2{font-size:1.25rem;line-height:1.3;margin:8px 0 12px;color:#172554}
